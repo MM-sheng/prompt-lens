@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prompt Lens</title>
+    <meta
+      name="description"
+      content="A local-first prompt debugger that scores, rewrites, and structures prompts before you send them to an AI model."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-label="Prompt debugger">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Local prompt debugger</p>
+            <h1>Prompt Lens</h1>
+          </div>
+          <div class="score-pill" aria-live="polite">
+            <span id="scoreValue">0</span>
+            <small>/100</small>
+          </div>
+        </header>
+
+        <div class="editor-grid">
+          <section class="panel input-panel">
+            <div class="panel-header">
+              <h2>Your prompt</h2>
+              <div class="toolbar" aria-label="Prompt examples">
+                <button class="ghost-button" id="loadProduct">Product</button>
+                <button class="ghost-button" id="loadCode">Code</button>
+                <button class="ghost-button" id="clearPrompt">Clear</button>
+              </div>
+            </div>
+            <textarea
+              id="promptInput"
+              spellcheck="true"
+              placeholder="Paste a prompt here. Prompt Lens will inspect goals, context, constraints, output format, examples, and ambiguity."
+            ></textarea>
+          </section>
+
+          <section class="panel output-panel">
+            <div class="panel-header">
+              <h2>Rewrite</h2>
+              <button class="primary-button" id="copyRewrite">Copy</button>
+            </div>
+            <pre id="rewriteOutput"></pre>
+          </section>
+        </div>
+
+        <section class="results-grid" aria-label="Prompt analysis">
+          <article class="panel">
+            <div class="panel-header">
+              <h2>Checks</h2>
+              <span id="gradeLabel" class="grade-label">Needs input</span>
+            </div>
+            <div id="checksList" class="checks-list"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-header">
+              <h2>Fixes</h2>
+              <span id="fixCount" class="grade-label">0</span>
+            </div>
+            <ul id="fixesList" class="fixes-list"></ul>
+          </article>
+
+          <article class="panel">
+            <div class="panel-header">
+              <h2>Structure</h2>
+              <span class="grade-label">Template</span>
+            </div>
+            <div class="template-list">
+              <button data-template="task">Task</button>
+              <button data-template="context">Context</button>
+              <button data-template="constraints">Constraints</button>
+              <button data-template="format">Format</button>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
