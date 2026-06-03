@@ -27,12 +27,22 @@
         <div class="editor-grid">
           <section class="panel input-panel">
             <div class="panel-header">
-              <h2>Your prompt</h2>
+              <div>
+                <h2>Your prompt</h2>
+                <p class="panel-note" id="promptStats">0 words · 0 characters</p>
+              </div>
               <div class="toolbar" aria-label="Prompt examples">
                 <button class="ghost-button" id="loadProduct">Product</button>
                 <button class="ghost-button" id="loadCode">Code</button>
+                <button class="ghost-button" id="loadResearch">Research</button>
                 <button class="ghost-button" id="clearPrompt">Clear</button>
               </div>
+            </div>
+            <div class="profile-bar" aria-label="Prompt profile">
+              <button class="profile-button active" data-profile="general">General</button>
+              <button class="profile-button" data-profile="coding">Coding</button>
+              <button class="profile-button" data-profile="writing">Writing</button>
+              <button class="profile-button" data-profile="research">Research</button>
             </div>
             <textarea
               id="promptInput"
@@ -43,8 +53,14 @@
 
           <section class="panel output-panel">
             <div class="panel-header">
-              <h2>Rewrite</h2>
-              <button class="primary-button" id="copyRewrite">Copy</button>
+              <div>
+                <h2>Rewrite</h2>
+                <p class="panel-note" id="profileHint">Balanced checks for everyday prompts.</p>
+              </div>
+              <div class="toolbar">
+                <button class="ghost-button" id="downloadRewrite">Download</button>
+                <button class="primary-button" id="copyRewrite">Copy</button>
+              </div>
             </div>
             <pre id="rewriteOutput"></pre>
           </section>
@@ -78,6 +94,14 @@
               <button data-template="constraints">Constraints</button>
               <button data-template="format">Format</button>
             </div>
+          </article>
+
+          <article class="panel risk-panel">
+            <div class="panel-header">
+              <h2>Risks</h2>
+              <span id="riskCount" class="grade-label">0</span>
+            </div>
+            <ul id="risksList" class="fixes-list"></ul>
           </article>
         </section>
       </section>
