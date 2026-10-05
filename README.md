@@ -4,6 +4,18 @@ A local-first prompt debugger that scores, rewrites, and structures prompts befo
 
 Prompt Lens is a tiny static web app for developers, writers, product people, and students who want better AI results without sending their drafts to another server.
 
+## Try it now
+
+**[Open Prompt Lens](https://mm-sheng.github.io/prompt-lens/)** — no installation, account, or API key required.
+
+Paste a prompt, choose a scoring profile, and inspect the rewritten draft. The tool adds structure and marks missing information; you fill in the details before sending it to your model.
+
+### What changes?
+
+A prompt such as **“Help me write a product announcement”** leaves the audience, facts, length, and format unspecified. Prompt Lens helps you identify those missing sections and build a more explicit request.
+
+The score measures prompt structure using transparent rules. It is not a model evaluation or a guarantee of a better answer. Your draft stays in your browser.
+
 ## Features
 
 - Scores prompts across goal, context, constraints, output format, examples, and specificity
